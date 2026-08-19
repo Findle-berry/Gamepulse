@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GamePulse — Know a game before you buy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="live.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">◒</span> GAMEPULSE</a>
+      <nav><a href="#discover">Discover</a><a href="#watchlist">Watchlist</a><a href="#about">How it works</a></nav>
+      <button class="icon-button" aria-label="Notifications">◌<span class="notification-dot"></span></button>
+    </header>
+
+    <main>
+      <section class="hero" id="discover">
+        <p class="eyebrow">THE CURRENT STATE OF GAMES</p>
+        <h1>Know the game<br /><em>now.</em></h1>
+        <p class="hero-copy">GamePulse turns years of patches, promises, and player reviews into one clear answer: is it worth playing today?</p>
+        <label class="search" for="game-search"><span>⌕</span><input id="game-search" placeholder="Search a game, studio, or franchise" autocomplete="off" /><kbd>⌘ K</kbd></label>
+        <div id="search-results" class="search-results" aria-live="polite"></div>
+      </section>
+
+      <section class="featured" aria-label="Featured game analysis">
+        <div id="cover-art" class="cover-art"><div class="cover-glow"></div><div id="cover-title" class="cover-title">LIVE<br/>STEAM</div><div class="cover-subtitle">GAME<br/>PULSE</div></div>
+        <div class="featured-content">
+          <div class="title-line"><p id="state-updated" class="eyebrow">LIVE STEAM DATA</p><button id="watch-button" class="watch-button">＋ Watch</button></div>
+          <h2 id="game-title">Loading game…</h2>
+          <p id="game-meta" class="meta">Steam game state</p>
+          <div class="verdict-row"><div class="verdict"><span class="pulse"></span><div><small>RECENT STEAM SIGNAL</small><strong id="verdict">Loading…</strong></div></div><div class="score"><strong id="score">—</strong><span>/100 recent<br/>player signal</span></div></div>
+          <p id="summary" class="summary">Fetching official updates and recent player reviews.</p>
+          <div class="signals"><span id="review-signal"><b>—</b> recent reviews</span><span id="release-signal"><b>—</b> release date</span></div>
+        </div>
+      </section>
+
+      <section class="dashboard">
+        <div class="section-heading"><div><p class="eyebrow">THE RECEIPTS</p><h2>What changed?</h2></div><button class="text-button">View full timeline →</button></div>
+        <div class="timeline-card">
+          <div class="chart-label chart-top">CURRENT STEAM SIGNAL <b id="chart-score">—</b></div>
+          <svg viewBox="0 0 760 210" preserveAspectRatio="none" aria-label="Review signal climbing from 57 at launch to 84 currently" role="img">
+            <defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#d9ff55" stop-opacity=".38"/><stop offset="1" stop-color="#d9ff55" stop-opacity="0"/></linearGradient></defs>
+            <path class="grid" d="M0 40H760M0 105H760M0 170H760"/><path class="area" d="M0 178 L75 167 L145 180 L215 151 L290 143 L365 119 L440 104 L515 89 L600 66 L675 54 L760 35 V210 H0Z"/><path class="line" d="M0 178 L75 167 L145 180 L215 151 L290 143 L365 119 L440 104 L515 89 L600 66 L675 54 L760 35"/>
+            <circle cx="0" cy="178" r="5"/><circle cx="215" cy="151" r="5"/><circle cx="440" cy="104" r="5"/><circle cx="600" cy="66" r="5"/><circle cx="760" cy="35" r="6"/>
+          </svg>
+          <div class="chart-labels"><span>Launch<br/><b>Dec ’20</b></span><span>Patch 1.5<br/><b>Feb ’22</b></span><span>Phantom Liberty<br/><b>Sep ’23</b></span><span>Patch 2.2<br/><b>Dec ’24</b></span><span>Today<br/><b>Aug ’26</b></span></div>
+        </div>
+        <div id="event-grid" class="event-grid">
+          <article><span class="event-date">SEP 2023</span><h3>Phantom Liberty lands</h3><p>Expansion and 2.0 systems overhaul shift the conversation from recovery to recommendation.</p><strong class="positive">+12 signal</strong></article>
+          <article><span class="event-date">DEC 2024</span><h3>Patch 2.2 fixes lingering issues</h3><p>Players praise stability improvements, photo mode updates, and quality-of-life changes.</p><strong class="positive">+5 signal</strong></article>
+          <article><span class="event-date">LAST 30 DAYS</span><h3>Reviews say: “finally complete”</h3><p>Performance is the recurring positive; a few still flag uneven AI and pacing.</p><strong class="neutral">92% positive</strong></article>
+        </div>
+      </section>
+
+      <section class="reviews-section">
+        <div class="section-heading"><div><p class="eyebrow">RECENT PLAYER VOICE</p><h2>Not launch-day reviews.</h2></div><div class="filter-pills"><button class="active">Last 30 days</button><button>All time</button></div></div>
+        <div id="review-grid" class="review-grid">
+          <article class="review"><div class="review-top"><span class="avatar orange">R</span><div><b>ruufus</b><small>Steam · 4 days ago</small></div><span class="recommend">Recommended</span></div><p>“It’s the game it was always meant to be. The city feels alive and the expansion is outstanding.”</p><div class="tags"><span>performance</span><span>story</span></div></article>
+          <article class="review"><div class="review-top"><span class="avatar purple">M</span><div><b>mothman.exe</b><small>Steam · 6 days ago</small></div><span class="recommend">Recommended</span></div><p>“Came back after years away. Smooth on my mid-range PC, great build variety, and I lost a whole weekend.”</p><div class="tags"><span>PC performance</span><span>builds</span></div></article>
+          <article class="review"><div class="review-top"><span class="avatar blue">J</span><div><b>johne</b><small>Steam · 9 days ago</small></div><span class="mixed">Mixed</span></div><p>“The quests are fantastic, but pedestrians and police AI can still break immersion. Better than launch by miles.”</p><div class="tags"><span>AI</span><span>immersion</span></div></article>
+        </div>
+      </section>
+
+      <section class="watchlist" id="watchlist"><div class="section-heading"><div><p class="eyebrow">YOUR RADAR</p><h2>Games to revisit</h2></div><button class="text-button">Manage watchlist →</button></div><div id="watchlist-grid" class="watchlist-grid"></div></section>
+    </main>
+    <footer id="about"><span>GAMEPULSE</span><p>Built to answer the question every store page avoids: <em>what is this game like today?</em></p><span>Prototype · 2026</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
